@@ -1,7 +1,6 @@
 <template lang="pug">
-div.SiteIndex
-  IndexTop
-  IndexNews
+section#news.IndexNews
+  p IndexNews
 </template>
 
 <script lang="ts">
@@ -11,6 +10,6 @@ export default defineComponent({})
 </script>
 
 <style lang="stylus">
-.SiteIndex
+.IndexNews
   background-color: $backgroundColor
 </style>
