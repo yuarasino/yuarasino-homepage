@@ -1,9 +1,6 @@
 <template lang="pug">
-div.SiteLayout
-  SiteHeader
-  SiteMain
-    Nuxt
-  SiteFooter
+main.SiteMain
+  slot
 </template>
 
 <script lang="ts">
@@ -13,6 +10,6 @@ export default defineComponent({})
 </script>
 
 <style lang="stylus">
-.SiteLayout
+.SiteMain
   background-color: $backgroundColor
 </style>

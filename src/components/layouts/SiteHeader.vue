@@ -1,9 +1,6 @@
 <template lang="pug">
-div.SiteLayout
-  SiteHeader
-  SiteMain
-    Nuxt
-  SiteFooter
+header.SiteHeader
+  p SiteHeader
 </template>
 
 <script lang="ts">
@@ -13,6 +10,6 @@ export default defineComponent({})
 </script>
 
 <style lang="stylus">
-.SiteLayout
+.SiteHeader
   background-color: $backgroundColor
 </style>
