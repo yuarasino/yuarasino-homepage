@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+div.SiteIndex
   h1 {{ title }}
 </template>
 
@@ -14,3 +14,8 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="stylus">
+.SiteIndex
+  background-color: $backgroundColor
+</style>
