@@ -11,8 +11,3 @@ import { defineComponent } from "@nuxtjs/composition-api"
 
 export default defineComponent({})
 </script>
-
-<style lang="stylus">
-.SiteLayout
-  background-color: $backgroundColor
-</style>
