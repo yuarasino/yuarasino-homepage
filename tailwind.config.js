@@ -1,3 +1,9 @@
+import { getIconCollections, iconsPlugin } from "@egoist/tailwindcss-icons"
+
+const icons = iconsPlugin({
+  collections: getIconCollections(["fa6-solid", "fa6-brands"]),
+})
+
 /** @type {import("tailwindcss").Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -56,5 +62,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [icons],
 }
