@@ -3,6 +3,11 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      screens: {
+        tablet: "800px",
+        laptop: "1120px",
+        desktop: "1600px",
+      },
       fontFamily: {
         sans: ["'M PLUS 1 Variable'", "sans-serif"],
         mono: ["'M PLUS Code Latin'", "monospace"],

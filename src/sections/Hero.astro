@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets"
+
+import illust from "@/assets/illust.png"
+---
+
+<aside id="hero" class="sticky top-0 h-screen w-full overflow-hidden pt-6">
+  <div class="pattern absolute inset-0 -z-10"></div>
+  <Image
+    class="h-full w-full object-cover object-top"
+    src={illust}
+    alt="新篠ゆうのイラスト"
+  />
+</aside>
+<style>
+  .pattern {
+    background-position: 12px 8px;
+    background-image: linear-gradient(to bottom, #78cdf6 1px, transparent 1px),
+      linear-gradient(to right, #78cdf6 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+</style>
