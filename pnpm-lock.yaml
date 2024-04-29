@@ -13,6 +13,15 @@ importers:
       "@astrojs/tailwind":
         specifier: ^5.1.0
         version: 5.1.0(astro@4.7.0(typescript@5.4.5))(tailwindcss@3.4.3)
+      "@fontsource-variable/m-plus-1":
+        specifier: ^5.0.17
+        version: 5.0.17
+      "@fontsource/m-plus-code-latin":
+        specifier: ^5.0.20
+        version: 5.0.20
+      "@fontsource/rajdhani":
+        specifier: ^5.0.13
+        version: 5.0.13
       astro:
         specifier: ^4.7.0
         version: 4.7.0(typescript@5.4.5)
@@ -595,6 +604,24 @@ packages:
         integrity: sha512-5WoDz3Y19Bg2BnErkZTp0en+c/i9PvgFS7MBe1+m60HjFr0hrphlAGp4yzI7pxpt4xShln4ZyYp4neJm8hmOkQ==,
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
+
+  "@fontsource-variable/m-plus-1@5.0.17":
+    resolution:
+      {
+        integrity: sha512-ahzLlF6Q1mTehV7imxJVVLcqZV0Nvsx4tFz+Z0NrLObFzCxkGRVNYDAtJ9fxVRSZKDwGbFHm2wxZWZOvTHAjVw==,
+      }
+
+  "@fontsource/m-plus-code-latin@5.0.20":
+    resolution:
+      {
+        integrity: sha512-swDm+Yc0POj7i0/t919SaMM2+DTfV4wypDZ5cFTLcRt4Jhl/ttn2KlCTOjHD78841BrNBJAaXSPFdJguDRlUnA==,
+      }
+
+  "@fontsource/rajdhani@5.0.13":
+    resolution:
+      {
+        integrity: sha512-nFvAW3AVXz6xQ0m0X/XWb3qoEd/rFd59XPEgdZCPEQBb02FluTVqTdqCUPmKxp2Fnq32+BnSsB9JCUUbgu8BQA==,
+      }
 
   "@humanwhocodes/config-array@0.11.14":
     resolution:
@@ -4963,6 +4990,12 @@ snapshots:
   "@eslint/js@8.57.0": {}
 
   "@eslint/js@9.1.1": {}
+
+  "@fontsource-variable/m-plus-1@5.0.17": {}
+
+  "@fontsource/m-plus-code-latin@5.0.20": {}
+
+  "@fontsource/rajdhani@5.0.13": {}
 
   "@humanwhocodes/config-array@0.11.14":
     dependencies:
