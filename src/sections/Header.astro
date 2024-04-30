@@ -1,0 +1,79 @@
+---
+import { iconLinks, primaryLinks } from "@/constants"
+---
+
+<header id="header" class="px-8 py-8 laptop:px-16">
+  <div class="flex flex-row items-center justify-between">
+    <h1 class="self-start">
+      <span class="font-system text-4xl tracking-wider text-primary-500"
+        >YuArasino</span
+      >
+    </h1>
+    <nav class="hidden self-end laptop:block">
+      <ul class="flex flex-row items-center gap-8">
+        {
+          primaryLinks.map(({ title, url }) => (
+            <li>
+              <a href={url} class="block hover:opacity-50">
+                <span class="block font-system text-2xl tracking-wider first-letter:text-secondary-500">
+                  {title}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+        {
+          iconLinks.map(({ icon, url }) => (
+            <li>
+              <a href={url} target="_blank" class="block hover:opacity-50">
+                <span class={`${icon} text-2xl`} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="flex flex-col gap-8 laptop:hidden">
+      <button class="yh-header-trigger self-end" type="button">
+        <span class="yh-header-open i-fa6-solid-bars text-2xl"></span>
+        <span class="yh-header-close i-fa6-solid-xmark hidden text-2xl"></span>
+      </button>
+      <nav class="yh-header-drawer hidden self-end">
+        <ul class="flex flex-col items-center gap-8">
+          {
+            primaryLinks.map(({ title, url }) => (
+              <li>
+                <a href={url} class="block hover:opacity-50">
+                  <span class="block font-system text-2xl tracking-wider first-letter:text-secondary-500">
+                    {title}
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+          {
+            iconLinks.map(({ icon, url }) => (
+              <li>
+                <a href={url} target="_blank" class="block hover:opacity-50">
+                  <span class={`${icon} text-2xl`} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<script>
+  const $trigger = document.querySelector(".yh-header-trigger")
+  const $open = document.querySelector(".yh-header-open")
+  const $close = document.querySelector(".yh-header-close")
+  const $drawer = document.querySelector(".yh-header-drawer")
+
+  $trigger?.addEventListener("click", () => {
+    $open?.classList.toggle("hidden")
+    $close?.classList.toggle("hidden")
+    $drawer?.classList.toggle("hidden")
+  })
+</script>
