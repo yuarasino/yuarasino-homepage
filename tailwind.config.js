@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        immobile: "1120px",
+        immobile: "880px",
       },
       fontFamily: {
         sans: ["'M PLUS 1 Variable'", "sans-serif"],

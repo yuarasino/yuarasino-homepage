@@ -1,10 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import News from "@/sections/News.astro"
 import Top from "@/sections/Top.astro"
 ---
 
 <Layout title="yuarasino-homepage">
   <main class="h-[200vh]">
-    <Top />
+    <div class="flex flex-col gap-24">
+      <div>
+        <Top />
+      </div>
+      <div>
+        <News />
+      </div>
+    </div>
   </main>
 </Layout>

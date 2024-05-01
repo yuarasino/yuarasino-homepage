@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content"
+
+import NewsItem from "@/components/NewsItem.astro"
+
+const newsItems = await getCollection("news")
+---
+
+<section id="news" class="px-4 immobile:px-8">
+  <div class="flex flex-col">
+    <h1>
+      <span
+        class="font-system text-6xl leading-none text-primary-500 immobile:text-8xl"
+        >News</span
+      >
+    </h1>
+    <p>
+      <span
+        class="mx-[0.25em] text-lg leading-none text-secondary-500 immobile:text-2xl"
+        >-</span
+      >
+      <span class="text-lg font-light leading-none immobile:text-2xl"
+        >新着情報</span
+      >
+    </p>
+  </div>
+  <ul class="mt-16 flex flex-col">
+    {
+      newsItems.map((item) => (
+        <li>
+          <NewsItem item={item} />
+        </li>
+      ))
+    }
+  </ul>
+</section>

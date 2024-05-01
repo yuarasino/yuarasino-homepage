@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  item: CollectionEntry<"news">
+}
+
+const { item } = Astro.props
+---
+
+<article>
+  <a href={`/news/${item.slug}`}>
+    <div class="flex flex-col">
+      <time class="font-system">{item.data.date.toISOString().split("T")[0].replace(/-/g, ".")}</time>
+      <div>
+        <span class="p-[0.175em] leading-none font-light text-white inline-block bg-secondary-500 rounded">
+          {item.data.category}
+        </span>
+      </div>
+      <h3 class="font-bold">{item.data.title}</h3>
+    </div>
+  </a>
+</article>
