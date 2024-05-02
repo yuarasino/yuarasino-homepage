@@ -1,4 +1,7 @@
 ---
+import "@fontsource-variable/m-plus-1"
+import "@fontsource-variable/inter"
+
 import HeroAside from "@/sections/HeroAside.astro"
 
 interface Props {
@@ -17,7 +20,7 @@ const { title, description } = Astro.props
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body>
+  <body class="font-sans text-secondary-950">
     <div class="grid grid-cols-1 pc:grid-cols-2">
       <div>
         <HeroAside />
