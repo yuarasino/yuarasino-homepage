@@ -1,10 +1,28 @@
 ---
+import CopyText from "@/components/CopyText.astro"
+import LeadText from "@/components/LeadText.astro"
 import SiteLayout from "@/layouts/SiteLayout.astro"
 ---
 
 <SiteLayout title="yuarasino-homepage" description="新篠ゆうのホームページ">
-  <main class="h-[200vh]">
-    <h1>yuarasino-homepage</h1>
-    <p>新篠ゆうのホームページ</p>
+  <main id="top" class="h-[200vh]">
+    <div class="mt-24 flex flex-col px-6">
+      <p class="self-start">
+        <CopyText>麻雀 × プログラミング</CopyText>
+      </p>
+      <p class="mt-6 self-end">
+        <CopyText>配信 × プログラミング</CopyText>
+      </p>
+      <p class="mt-12 self-center">
+        <CopyText>みんなの「やりたい」を形に！</CopyText>
+      </p>
+      <p class="mt-24 self-center">
+        <LeadText>
+          バーチャル美少女プログラマー、新篠ゆうです！<br />
+          夜22時の麻雀配信を中心に活動してます<br />
+          配信者さん向けのプログラム提供もやってます
+        </LeadText>
+      </p>
+    </div>
   </main>
 </SiteLayout>

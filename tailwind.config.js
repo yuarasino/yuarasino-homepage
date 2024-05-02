@@ -11,7 +11,8 @@ export default {
       },
       fontFamily: {
         // source: https://fontsource.org/
-        sans: ["'Inter Variable'", "'M PLUS 1 Variable'", "sans-serif"],
+        sans: ["'M PLUS 1 Variable'", "sans-serif"],
+        ui: ["'Inter Variable'", "system-ui"],
       },
       colors: {
         // source: https://uicolors.app/
