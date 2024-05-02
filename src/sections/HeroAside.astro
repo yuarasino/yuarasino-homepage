@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets"
+
+import heroImage from "@/assets/hero_image.png"
+---
+
+<aside id="hero" class="sticky top-0 h-screen w-full bg-sky-300">
+  <Image
+    src={heroImage}
+    alt=""
+    class="h-full w-full object-cover object-top"
+  />
+</aside>
