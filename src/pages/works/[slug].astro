@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content"
+
+import WorksEntry from "@/components/WorksEntry.astro"
+import SiteLayout from "@/layouts/SiteLayout.astro"
+
+export const getStaticPaths = async () => {
+  const entries = await getCollection("works")
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+---
+
+<SiteLayout
+  title=" | 新篠ゆうのホームページ"
+  description="新篠ゆうの制作実績です"
+>
+  <main id="main" class="px-6 @container">
+    <div class="mt-24 flex flex-col">
+      <p>
+        <time
+          class="font-ui text-[9.6vw] font-light leading-none text-primary-500 pc:text-[4.8vw]"
+          >Works</time
+        >
+      </p>
+      <p>
+        <span class="text-[3.2vw] font-light leading-none pc:text-[1.6vw]"
+          >制作実績</span
+        >
+      </p>
+    </div>
+    <div class="mt-24 px-6">
+      <WorksEntry entry={entry} />
+    </div>
+  </main>
+</SiteLayout>

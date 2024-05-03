@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  entry: CollectionEntry<"works">
+}
+
+const { entry } = Astro.props
+const { data } = entry
+const { title, image } = data
+const { Content } = await entry.render()
+---
+
+<article>
+  <div class="flex flex-col">
+    <div>
+      <Image src={image} alt="" />
+    </div>
+    <h1 class="mt-4">
+      <span class="text-2xl text-primary-500">{title}</span>
+    </h1>
+  </div>
+  <div class="prose mt-8 max-w-none">
+    <Content />
+  </div>
+</article>

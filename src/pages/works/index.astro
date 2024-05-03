@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content"
+
+import WorksSummary from "@/components/WorksSummary.astro"
+import SiteLayout from "@/layouts/SiteLayout.astro"
+
+const entries = (await getCollection("works")).sort((entry1, entry2) =>
+  entry1.data.date < entry2.data.date ? 1 : -1,
+)
+---
+
+<SiteLayout
+  title="制作実績 | 新篠ゆうのホームページ"
+  description="新篠ゆうの制作実績です"
+>
+  <main id="main" class="px-6 @container">
+    <div class="mt-24 flex flex-col">
+      <p>
+        <span
+          class="font-ui text-[9.6vw] font-light leading-none text-primary-500 pc:text-[4.8vw]"
+          >Works</span
+        >
+      </p>
+      <h1>
+        <span class="text-[3.2vw] font-light leading-none pc:text-[1.6vw]"
+          >制作実績</span
+        >
+      </h1>
+    </div>
+    <ul class="my-12 grid grid-cols-1 gap-6 px-6 @wd:grid-cols-2">
+      {
+        entries.map((entry) => (
+          <li>
+            <WorksSummary entry={entry} />
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</SiteLayout>

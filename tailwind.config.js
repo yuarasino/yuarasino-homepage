@@ -1,13 +1,22 @@
 // @ts-check
 
+import containerQueries from "@tailwindcss/container-queries"
+import typographyPlugin from "@tailwindcss/typography"
+
+const typography = typographyPlugin()
+
 /** @type {import("tailwindcss").Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
       screens: {
-        // source: half of full hd
+        // source: 1/2 of fullhd
         pc: "960px",
+      },
+      containers: {
+        // source: 1/3 of fullhd
+        wd: "640px",
       },
       fontFamily: {
         // source: https://fontsource.org/
@@ -58,5 +67,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [containerQueries, typography],
 }

@@ -2,11 +2,15 @@
 import CopyText from "@/components/CopyText.astro"
 import LeadText from "@/components/LeadText.astro"
 import SiteLayout from "@/layouts/SiteLayout.astro"
+import WorksSection from "@/sections/WorksSection.astro"
 ---
 
-<SiteLayout title="yuarasino-homepage" description="新篠ゆうのホームページ">
-  <main id="top" class="h-[200vh]">
-    <div class="mt-24 flex flex-col px-6">
+<SiteLayout
+  title="新篠ゆうのホームページ"
+  description="新篠ゆうのホームページです"
+>
+  <main id="main" class="px-6">
+    <div class="mt-24 flex flex-col">
       <p class="self-start">
         <CopyText>麻雀 × プログラミング</CopyText>
       </p>
@@ -23,6 +27,9 @@ import SiteLayout from "@/layouts/SiteLayout.astro"
           配信者さん向けのプログラム提供もやってます
         </LeadText>
       </p>
+    </div>
+    <div class="my-24 flex flex-col">
+      <WorksSection />
     </div>
   </main>
 </SiteLayout>

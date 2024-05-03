@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content"
+
+import WorksSummary from "@/components/WorksSummary.astro"
+
+const entries = (await getCollection("works"))
+  .filter((entry) => entry.data.order > 0)
+  .sort((entry1, entry2) => (entry1.data.order > entry2.data.order ? 1 : -1))
+---
+
+<section id="works" class="@container">
+  <div class="flex flex-col">
+    <p>
+      <span
+        class="font-ui text-[9.6vw] font-light leading-none text-primary-500 pc:text-[4.8vw]"
+        >Works</span
+      >
+    </p>
+    <h2>
+      <span class="text-[3.2vw] font-light leading-none pc:text-[1.6vw]"
+        >制作実績</span
+      >
+    </h2>
+  </div>
+  <ul class="my-12 grid grid-cols-1 gap-6 px-6 @wd:grid-cols-2">
+    {
+      entries.map((entry) => (
+        <li>
+          <WorksSummary entry={entry} />
+        </li>
+      ))
+    }
+  </ul>
+</section>
