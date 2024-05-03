@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets"
+
+import asvIllust from "@/assets/asv_illust.png"
+---
+
+<aside id="hero" class="yu-asv fixed left-0 top-0 -z-10 h-screen w-full">
+  <div
+    class="absolute left-0 top-0 h-full w-full bg-secondary-300 split:w-1/2 [.yu-asv_&]:z-10"
+  >
+    <Image
+      src={asvIllust}
+      alt=""
+      class="h-full w-full object-cover object-top"
+    />
+  </div>
+  <div
+    class="absolute right-0 top-0 h-full w-full bg-primary-300 split:w-1/2 [.yu-asp_&]:z-10"
+  >
+    <Image
+      src={asvIllust}
+      alt=""
+      class="h-full w-full object-cover object-top"
+    />
+  </div>
+</aside>
+
+<script>
+  const handler = () => {
+    const $hero = document.querySelector("#hero")
+    const $resume = document.querySelector("#resume")
+    if (!$hero || !$resume) return
+    const height = window.innerHeight
+    const top = $resume.getBoundingClientRect().top
+    if (top < height * 2) {
+      $hero.classList.remove("yu-asv")
+      $hero.classList.add("yu-asp")
+    } else {
+      $hero.classList.add("yu-asv")
+      $hero.classList.remove("yu-asp")
+    }
+  }
+  document.addEventListener("DOMContentLoaded", handler)
+  document.addEventListener("scroll", handler)
+</script>

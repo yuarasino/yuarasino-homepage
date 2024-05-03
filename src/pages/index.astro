@@ -1,10 +1,16 @@
 ---
 import SiteLayout from "@/layouts/SiteLayout.astro"
+import ActivitiesSection from "@/sections/ActivitiesSection.astro"
+import ProfileSection from "@/sections/ProfileSection.astro"
+import ResumeSection from "@/sections/ResumeSection.astro"
+import WorksSection from "@/sections/WorksSection.astro"
 ---
 
 <SiteLayout title="yuarasino-homepage" description="新篠ゆうのホームページ">
   <main>
-    <h1 class="text-primary-500">yuarasino-homepage</h1>
-    <p>新篠ゆうのホームページ</p>
+    <ProfileSection />
+    <ActivitiesSection />
+    <ResumeSection />
+    <WorksSection />
   </main>
 </SiteLayout>
