@@ -5,6 +5,11 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        // source: https://fontsource.org/
+        sans: ["'M PLUS 1 Variable'", "sans-serif"],
+        mono: ["'M PLUS Code Latin Variable'", "monospace"],
+      },
       colors: {
         // source: https://uicolors.app/
         primary: {

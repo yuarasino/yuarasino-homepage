@@ -1,4 +1,7 @@
 ---
+import "@fontsource-variable/m-plus-1"
+import "@fontsource-variable/m-plus-code-latin"
+
 interface Props {
   title: string
   description: string
@@ -15,7 +18,7 @@ const { title, description } = Astro.props
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body>
+  <body class="font-sans text-secondary-950">
     <slot />
   </body>
 </html>
