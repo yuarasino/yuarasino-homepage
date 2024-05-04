@@ -6,12 +6,17 @@ export default {
   theme: {
     extend: {
       screens: {
+        clamp: "640px",
         split: "960px",
       },
       fontFamily: {
         // source: https://fontsource.org/
         sans: ["'M PLUS 1 Variable'", "sans-serif"],
-        mono: ["'M PLUS Code Latin Variable'", "monospace"],
+        mono: [
+          "'M PLUS Code Latin Variable'",
+          "'M PLUS 1 Variable'",
+          "monospace",
+        ],
       },
       colors: {
         // source: https://uicolors.app/
