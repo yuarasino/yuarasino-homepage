@@ -1,0 +1,57 @@
+---
+const pages = [
+  {
+    name: "Guideline",
+    href: "/guideline",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+]
+
+const links = [
+  {
+    name: "X:Twitter",
+    href: "https://twitter.com/yuarasino",
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@yuarasino",
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/yuarasino",
+  },
+]
+---
+
+<footer id="footer">
+  <div class="bg-slate-500 py-16">
+    <ul class="flex flex-col items-center justify-center gap-4">
+      {
+        pages.map(({ name, href }) => (
+          <li>
+            <a href={href} class="text-xl text-white hover:opacity-80">
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="mt-16 flex justify-center gap-4">
+      {
+        links.map(({ name, href }) => (
+          <li>
+            <a href={href} class="text-white underline hover:opacity-80">
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="mt-16 text-center font-mono tracking-wide text-white">
+      <span class="mr-1 font-sans">&copy;</span>Yu Arasino as Programmer
+    </p>
+  </div>
+</footer>

@@ -3,6 +3,7 @@ import "@fontsource-variable/m-plus-1"
 import "@fontsource-variable/m-plus-code-latin"
 
 import HeroAside from "@/sections/HeroAside.astro"
+import SiteFooter from "@/sections/SiteFooter.astro"
 
 interface Props {
   title: string
@@ -23,5 +24,6 @@ const { title, description } = Astro.props
   <body class="font-sans text-secondary-950">
     <HeroAside />
     <slot />
+    <SiteFooter />
   </body>
 </html>
