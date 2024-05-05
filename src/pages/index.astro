@@ -1,16 +1,26 @@
 ---
 import SiteLayout from "@/layouts/SiteLayout.astro"
-import ActivitiesSection from "@/sections/ActivitiesSection.astro"
+import ActivitySection from "@/sections/ActivitySection.astro"
 import ProfileSection from "@/sections/ProfileSection.astro"
 import ResumeSection from "@/sections/ResumeSection.astro"
-import WorksSection from "@/sections/WorksSection.astro"
+import WorkSection from "@/sections/WorkSection.astro"
 ---
 
 <SiteLayout title="yuarasino-homepage" description="新篠ゆうのホームページ">
-  <main>
-    <ProfileSection />
-    <ActivitiesSection />
-    <ResumeSection />
-    <WorksSection />
+  <main id="top">
+    <div class="px-0 py-0">
+      <div class="mt-[100vh] split:ml-[50%] split:w-1/2">
+        <ProfileSection />
+      </div>
+      <div class="split:ml-[50%] split:w-1/2">
+        <ActivitySection />
+      </div>
+      <div class="mt-[100vh] split:mr-[50%] split:mt-0 split:w-1/2">
+        <ResumeSection />
+      </div>
+      <div class="split:mr-[50%] split:w-1/2">
+        <WorkSection />
+      </div>
+    </div>
   </main>
 </SiteLayout>
