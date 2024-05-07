@@ -69,22 +69,22 @@ const { data } = profile
           </h3>
         </div>
         <div class="mt-4 flex justify-center gap-8 px-4">
-          <div>
+          <div class="w-48">
             <Image
               src={data.avatar}
               alt="新篠ゆうの立ち絵"
-              class="h-auto w-48"
+              class="h-auto w-full"
             />
           </div>
           <div>
             <ul class="flex h-full flex-col justify-end gap-4 py-4">
               {
                 data.diffs.map((diff, i) => (
-                  <li>
+                  <li class="w-24">
                     <Image
                       src={diff}
                       alt={`新篠ゆうの立ち絵差分${i}`}
-                      class="h-auto w-24"
+                      class="h-auto w-full"
                     />
                   </li>
                 ))
