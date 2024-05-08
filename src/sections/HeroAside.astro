@@ -26,18 +26,19 @@ import illustAsv from "@/assets/illust_asv.png"
   </div>
 </aside>
 <script>
-  const handler = () => {
-    const $hero = document.querySelector("#hero")
-    const $resume = document.querySelector("#resume")
-    if (!$hero || !$resume) return
-    const height = window.innerHeight
-    const top = $resume.getBoundingClientRect().top
-    if (top < height * 2) {
-      $hero.classList.add("flip")
-    } else {
-      $hero.classList.remove("flip")
+  const $hero = document.querySelector("#hero")
+  const $resume = document.querySelector("#resume")
+  if ($hero && $resume) {
+    const handler = () => {
+      const height = window.innerHeight
+      const top = $resume.getBoundingClientRect().top
+      if (top < height * 2) {
+        $hero.classList.add("flip")
+      } else {
+        $hero.classList.remove("flip")
+      }
     }
+    document.addEventListener("DOMContentLoaded", handler)
+    document.addEventListener("scroll", handler)
   }
-  document.addEventListener("DOMContentLoaded", handler)
-  document.addEventListener("scroll", handler)
 </script>

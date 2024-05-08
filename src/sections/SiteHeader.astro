@@ -10,7 +10,7 @@ interface Props {
 const { isTop } = Astro.props
 const LogoTag = isTop ? "h1" : "p"
 
-const pages = [
+const links = [
   { title: "Profile", href: "/#profile" },
   { title: "Activity", href: "/#activity" },
   { title: "Resume", href: "/#resume" },
@@ -18,20 +18,55 @@ const pages = [
 ]
 ---
 
-<header id="header" class="fixed left-0 top-0 z-50 h-16 w-full">
-  <nav class="flex h-full items-center justify-between">
-    <LogoTag class="flex place-items-center px-2">
-      <a href="/" class="hover:opacity-70">
-        <Image
-          src={logoAsv}
-          alt="新篠ゆう🐡バーチャル美少女プログラマー"
-          class="h-12 w-auto"
-        />
-      </a>
-    </LogoTag>
-    <ul class="hidden h-full place-items-center gap-4 px-4 split:flex">
+<header
+  id="header"
+  class="fixed left-0 top-0 z-50 h-16 w-full [&.active]:h-screen [&.active]:bg-primary-300"
+>
+  <nav class="h-full">
+    <div class="flex h-16 justify-between">
+      <LogoTag class="flex h-full place-items-center px-2">
+        <a href="/" class="hover:opacity-70">
+          <Image
+            src={logoAsv}
+            alt="新篠ゆう🐡バーチャル美少女プログラマー"
+            class="h-12 w-auto"
+          />
+        </a>
+      </LogoTag>
+      <ul class="hidden h-full place-items-center gap-4 px-4 split:flex">
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href} class="text-lg hover:opacity-70">
+                {link.title}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a
+            href="https://github.com/yuarasino/yuarasino-homepage"
+            class="text-lg hover:opacity-70"
+          >
+            Code
+            <span class="i-fa6-solid-arrow-up-right-from-square text-xs"></span>
+          </a>
+        </li>
+      </ul>
+      <div class="flex place-items-center px-5 split:hidden">
+        <button id="toggle" type="button">
+          <span class="i-fa6-solid-bars h-6 w-6 [.active_&]:hidden"></span>
+          <span
+            class="i-fa6-solid-xmark hidden h-6 w-6 [.active_&]:inline-block"
+          ></span>
+        </button>
+      </div>
+    </div>
+    <ul
+      class="hidden h-full flex-col place-items-center gap-8 py-8 text-white [.active_&]:flex"
+    >
       {
-        pages.map((page) => (
+        links.map((page) => (
           <li>
             <a href={page.href} class="text-lg hover:opacity-70">
               {page.title}
@@ -51,3 +86,23 @@ const pages = [
     </ul>
   </nav>
 </header>
+<script>
+  const $header = document.querySelector("#header")
+  const $toggle = document.querySelector("#toggle")
+  if ($header && $toggle) {
+    const handler = () => {
+      $header.classList.toggle("active")
+    }
+    $toggle.addEventListener("click", handler)
+  }
+
+  const $links = document.querySelectorAll("#header a")
+  if ($header && $links) {
+    $links.forEach(($link) => {
+      const handler = () => {
+        $header.classList.remove("active")
+      }
+      $link.addEventListener("click", handler)
+    })
+  }
+</script>
