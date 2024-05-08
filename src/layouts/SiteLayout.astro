@@ -3,6 +3,7 @@ import "@fontsource-variable/m-plus-1"
 import "@fontsource-variable/m-plus-code-latin"
 
 import HeroAside from "@/sections/HeroAside.astro"
+import SiteHeader from "@/sections/SiteHeader.astro"
 
 interface Props {
   title: string
@@ -21,6 +22,7 @@ const { title, description } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="font-sans text-slate-900">
+    <SiteHeader isTop />
     <HeroAside />
     <slot />
   </body>

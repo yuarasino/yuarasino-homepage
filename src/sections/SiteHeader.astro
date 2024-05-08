@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets"
+
+import logoAsv from "@/assets/logo_asv.png"
+
+interface Props {
+  isTop: boolean
+}
+
+const { isTop } = Astro.props
+const LogoTag = isTop ? "h1" : "p"
+
+const pages = [
+  { title: "Profile", href: "/#profile" },
+  { title: "Activity", href: "/#activity" },
+  { title: "Resume", href: "/#resume" },
+  { title: "Work", href: "/#work" },
+]
+---
+
+<header id="header" class="fixed left-0 top-0 z-50 h-16 w-full">
+  <nav class="flex h-full items-center justify-between">
+    <LogoTag class="flex place-items-center px-2">
+      <a href="/" class="hover:opacity-70">
+        <Image
+          src={logoAsv}
+          alt="新篠ゆう🐡バーチャル美少女プログラマー"
+          class="h-12 w-auto"
+        />
+      </a>
+    </LogoTag>
+    <ul class="hidden h-full place-items-center gap-4 px-4 split:flex">
+      {
+        pages.map((page) => (
+          <li>
+            <a href={page.href} class="text-lg hover:opacity-70">
+              {page.title}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a
+          href="https://github.com/yuarasino/yuarasino-homepage"
+          class="text-lg hover:opacity-70"
+        >
+          Code
+          <span class="i-fa6-solid-arrow-up-right-from-square text-xs"></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

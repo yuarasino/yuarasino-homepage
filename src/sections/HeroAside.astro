@@ -1,25 +1,25 @@
 ---
 import { Image } from "astro:assets"
 
-import heroAsp from "@/assets/hero_asv.png"
-import heroAsv from "@/assets/hero_asv.png"
+import illustAsp from "@/assets/illust_asv.png"
+import illustAsv from "@/assets/illust_asv.png"
 ---
 
 <aside id="hero" class="fixed left-0 top-0 -z-50 h-screen w-full">
   <div
-    class="absolute left-0 top-0 z-0 h-full w-full bg-primary-300 split:w-1/2"
+    class="absolute left-0 top-0 z-0 h-full w-full bg-primary-300 pt-16 split:w-1/2"
   >
     <Image
-      src={heroAsv}
+      src={illustAsv}
       alt="VTuber新篠ゆうのイラスト"
       class="h-full w-full object-cover object-top"
     />
   </div>
   <div
-    class="absolute right-0 top-0 -z-10 h-full w-full bg-secondary-300 split:w-1/2 [.flip_&]:z-10"
+    class="absolute right-0 top-0 -z-10 h-full w-full bg-secondary-300 pt-16 split:w-1/2 [.flip_&]:z-10"
   >
     <Image
-      src={heroAsp}
+      src={illustAsp}
       alt="プログラマー新篠ゆうのイラスト"
       class="h-full w-full object-cover object-top"
     />
