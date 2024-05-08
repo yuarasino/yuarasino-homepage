@@ -16,7 +16,7 @@ import heroAsv from "@/assets/hero_asv.png"
     />
   </div>
   <div
-    class="absolute right-0 top-0 -z-10 h-full w-full bg-secondary-300 split:w-1/2"
+    class="absolute right-0 top-0 -z-10 h-full w-full bg-secondary-300 split:w-1/2 [.flip_&]:z-10"
   >
     <Image
       src={heroAsp}
@@ -25,3 +25,19 @@ import heroAsv from "@/assets/hero_asv.png"
     />
   </div>
 </aside>
+<script>
+  const handler = () => {
+    const $hero = document.querySelector("#hero")
+    const $resume = document.querySelector("#resume")
+    if (!$hero || !$resume) return
+    const height = window.innerHeight
+    const top = $resume.getBoundingClientRect().top
+    if (top < height * 2) {
+      $hero.classList.add("flip")
+    } else {
+      $hero.classList.remove("flip")
+    }
+  }
+  document.addEventListener("DOMContentLoaded", handler)
+  document.addEventListener("scroll", handler)
+</script>
