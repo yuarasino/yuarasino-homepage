@@ -5,6 +5,10 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      screens: {
+        split: "960px",
+        clamp: "640px",
+      },
       fontFamily: {
         // source: https://fontsource.org/
         sans: ["'M PLUS 1 Variable'", "sans-serif"],
